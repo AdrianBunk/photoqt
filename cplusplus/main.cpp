@@ -113,11 +113,13 @@ int main(int argc, char **argv) {
 
 #ifdef VIDEOVLC
     RegisterQmlVlc();
-//    QmlVlcConfig& config = QmlVlcConfig::instance();
-//    config.enableAdjustFilter( true );
-//    config.enableMarqueeFilter( true );
-//    config.enableLogoFilter( true );
-//    config.enableDebug( true );
+    QmlVlcConfig& config = QmlVlcConfig::instance();
+    config.enableAdjustFilter( true );
+    config.enableMarqueeFilter( true );
+    config.enableLogoFilter( true );
+    config.enableDebug( true );
+    config.enableNoVideoTitleShow(true);
+    config.enableHardwareAcceleration(true);
 #endif
 
     // only a single instance (by default)

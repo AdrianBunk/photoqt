@@ -44,11 +44,6 @@ Item {
 
     }
 
-    VlcVideoSurface {
-        source: mediaplayer;
-        anchors.fill: parent
-    }
-
     // video element
     VideoOutput {
 
@@ -56,7 +51,10 @@ Item {
 
         source: mediaplayer
 
-        anchors.fill: parent
+        anchors.centerIn: parent;
+        width: parent.width / 2;
+        height: parent.height / 2;
+        opacity: 0.9;
 
     }
 

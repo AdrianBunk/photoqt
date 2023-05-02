@@ -43,3 +43,8 @@ if(VIDEO_MPV)
     SET(d "cplusplus/libmpv")
     SET(photoqt_SOURCES ${photoqt_SOURCES} ${d}/mpvqthelper.h ${d}/mpvobject.cpp)
 endif()
+
+if(VIDEO_VLC)
+    SET(d "cplusplus/libvlc")
+    SET(photoqt_SOURCES ${photoqt_SOURCES} ${d}/vlcqthelper.h ${d}/vlcobject.cpp)
+endif()

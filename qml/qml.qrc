@@ -181,5 +181,6 @@
         <file>modal/PQModalConfirm.qml</file>
         <file>modal/PQModalSelectFolder.qml</file>
         <file>modal/PQModalInform.qml</file>
+        <file>mainwindow/image/PQVLC.qml</file>
     </qresource>
 </RCC>

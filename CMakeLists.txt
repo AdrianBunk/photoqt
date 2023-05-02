@@ -48,6 +48,7 @@ option(LIBARCHIVE "Enable features that require libarchive" ON)
 option(PUGIXML "Enable features that require pugixml" ON)
 option(VIDEO_QT "Enable video support through Qt" ON)
 option(VIDEO_MPV "Enable video support through MPV" OFF)
+option(VIDEO_VLC "Enable video support through VLC" OFF)
 option(CHROMECAST "Enable Chromecast support" ON)
 option(LIBVIPS "Use libvips" OFF)
 
@@ -394,6 +395,15 @@ if(VIDEO_MPV)
     endif()
 else()
     message("** libmpv DISABLED")
+endif()
+
+if(VIDEO_VLC)
+    target_link_libraries(${PROJECT_NAME} "vlc")
+    message("** Using libvlc")
+    add_definitions(-DVIDEOVLC)
+    add_definitions(-DQMLVLC_QTMULTIMEDIA_ENABLE)
+else()
+    message("** libvlc DISABLED")
 endif()
 
 

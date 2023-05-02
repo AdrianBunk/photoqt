@@ -82,6 +82,10 @@
 #include "libmpv/mpvobject.h"
 #endif
 
+#ifdef VIDEOVLC
+#include "qmlvlc/QmlVlc.h"
+#endif
+
 int main(int argc, char **argv) {
 
 #ifdef Q_OS_WIN
@@ -106,6 +110,15 @@ int main(int argc, char **argv) {
 
     // silence the `deprecated connection' warnings
     QLoggingCategory::setFilterRules("qt.qml.connections.warning=false");
+
+#ifdef VIDEOVLC
+    RegisterQmlVlc();
+//    QmlVlcConfig& config = QmlVlcConfig::instance();
+//    config.enableAdjustFilter( true );
+//    config.enableMarqueeFilter( true );
+//    config.enableLogoFilter( true );
+//    config.enableDebug( true );
+#endif
 
     // only a single instance (by default)
     PQSingleInstance app(argc, argv);
